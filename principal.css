@@ -1,0 +1,625 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:white;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    margin: 0; 
+    padding-top: 60px; 
+    align-items: center;
+}
+.alert {
+    background-color: rgba(211, 195, 170, 0.542);
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 15px 0; 
+    position:fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; 
+  }
+ 
+  .container { padding-inline: 15px; }
+#div {
+    scroll-behavior: smooth;
+}
+  .has-bg-image {
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position:center;
+    margin-top: 25px ;    
+}
+.h1 {
+  font-size: 100px;
+  line-height: 1.2;
+  color:rgba(0, 0, 0, 0.847);
+}
+  .btn {
+    font-weight: 600px;
+    max-width: max-content;
+    padding: 10px 30px;
+    border-radius: 3px;
+    transition: 0.25s ease;
+  }
+  
+  .btn-primary{
+    background-color: rgba(211, 195, 170, 0.736);
+    color:black;
+  }
+  .btn-secondary:hover,.btn-primary:hover {
+    background-color: rgba(211, 195, 170, 0.434);
+    color:black;
+  }
+  
+  
+  .hero { padding-block-start: 0; }
+
+  .hero-card {
+    background-color: gray;
+    padding: 100px 15px;
+    background-position: 40%;
+  }
+
+header {
+    background-color:rgb(196, 168, 123) ;
+    padding: 1px 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    width: 100%;
+    position: relative;
+}
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+nav {
+    margin-top: 1px;
+    width: 100%;
+    background-color:rgb(196, 168, 123);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+nav ul {
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transform:none;
+}
+nav ul li {
+    position: relative;
+    margin: 0 20px;
+}
+.dropdown-text {
+    cursor: pointer;
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.847);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    
+}
+.dropdown-text:hover {
+    color:rgb(84, 77, 65);
+    text-decoration: underline;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:rgba(196, 168, 123, 0.499);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1, 0.2);
+    min-width: 200px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu li {
+    padding: 15px;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color:rgb(84, 77, 65);
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+
+#account-button ,.cart-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.847);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#account-button:hover ,.cart-icon:hover{
+    color: rgb(84, 77, 65);
+    transform: scale(1.2);
+}
+.account-form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index:1000;
+    display: none;
+}
+
+
+#account-form h3 {
+    margin-bottom: 10px;
+    text-decoration: underline;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.847);
+}
+
+#account-form label {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.847);
+}
+#account-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#account-form button {
+    width: 100%;
+    padding: 10px;
+    background:  rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+#account-form button:hover {
+    background: rgba(84, 77, 65, 1); 
+}
+.hidden {
+    display: none;
+}
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f9f9f9;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.carousel-text  {
+    display: block;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.847);
+    margin: 20px auto;
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+.carousel-item {
+    flex: 0 0 100%;
+    max-width: calc(20% - 20px);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.product-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.1); 
+}
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #986860;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 17px;
+    background:#986860;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cart-btn:hover {
+    background: rgba(0, 0, 0, 0.847);
+}
+.product-info {
+    padding: 15px;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.new-price {
+    color: #986860;
+}
+
+.product-reviews {
+    font-size: 14px;
+    color: #63635f;
+}
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+ 
+.all {
+   
+    display: block;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.847);
+    margin: 20px auto;
+    font-size: 27px;
+    line-height: 1.2
+}
+
+
+
+.table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+.table thead th {
+    background-color:rgb(196, 168, 123);
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ffffff;
+}
+
+.table tbody td {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    font-size: 16px;
+    color:rgb(196, 168, 123);
+    font-style: italic;
+}
+.table tbody td img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    display: block;
+    position: relative;
+    margin:0 auto ;}
+.table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+ footer {
+    background-color:rgb(196, 168, 123);
+    color:rgba(39, 38, 36, 0.984);
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 20px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: rgba(39, 38, 36, 0.984);
+    font-family: 'Georgia', serif;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-list i {
+    margin-right: 10px;
+    color:rgba(39, 38, 36, 0.984);}
+
+.social-media {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.social-media a {
+    color:rgba(39, 38, 36, 0.984);
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color:rgba(126, 116, 92, 0.984);
+    transform: scale(1.2);
+}
+
+.newsletter-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: rgba(39, 38, 36, 0.984);
+    font-family: 'Georgia', serif;
+}
+
+.newsletter-text {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.newsletter-form {
+    position: relative;
+}
+
+.email-field {
+    background-color: white;
+    font-size: 20px;
+    padding: 8px 10px;
+    padding-inline-end: 145px;
+    border: 1px solid rgba(126, 116, 92, 0.984);
+    border-radius: 3px;
+    outline: none;
+    transition: 25s ease;
+}
+
+.email-field::placeholder {
+    color: gray;
+}
+
+.email-field:focus {
+    border-color: black;
+}
+.Subscribe {
+    background-color: rgba(126, 116, 92, 0.984);
+    color: rgba(39, 38, 36, 0.984);
+    padding: 8px 10px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    border-radius: 7px;
+}
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        background-color: rgb(196, 168, 123); 
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    .h1 {
+        font-size: 60px;
+    }
+    .hero-card {
+        padding: 50px 10px;
+    }
+
+    .product-card {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+    .logo,#account-button,.cart-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+       
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .dropdown-menu {
+        position: static; 
+        background-color:rgb(196, 168, 123);
+    }
+    #account-button,.cart-icon{
+       font-size: 20px;
+    }
+    .carousel-container {
+        padding: 10px 0; 
+    }
+
+    .carousel-text {
+        font-size: 30px; 
+        margin: 10px auto;
+    }
+    .carousel-track {
+        gap: 10px;
+    }
+    .carousel-item {
+        flex: 0 0 80%; 
+        max-width: 80%;
+    }
+
+    .product-card {
+        margin: 0 auto; 
+    }
+    .prev-btn,
+    .next-btn {
+        width: 40px;
+        height: 40px;
+    }
+    .cart-btn {
+        bottom: 5px;
+        right: 10px;
+        padding: 8px;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        margin: 10px 0;
+    }
+}
